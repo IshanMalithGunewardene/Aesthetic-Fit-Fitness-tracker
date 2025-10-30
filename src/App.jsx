@@ -1,59 +1,54 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import React from "react";
+import Navbar from "./components/nav_bar.jsx";
+import FitnessFemale from "./assets/Fitness-Female.png";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-500 via-pink-500 to-red-500 flex items-center justify-center">
-      <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full">
-        <div className="flex justify-center gap-8 mb-8">
-          <a
-            href="https://vite.dev"
-            target="_blank"
-            className="hover:scale-110 transition-transform"
-          >
-            <img src={viteLogo} className="h-20 w-20" alt="Vite logo" />
-          </a>
-          <a
-            href="https://react.dev"
-            target="_blank"
-            className="hover:scale-110 transition-transform"
-          >
-            <img
-              src={reactLogo}
-              className="h-20 w-20 animate-spin-slow"
-              alt="React logo"
-            />
-          </a>
+    <div>
+      {/* parent wrapper 01 */}
+      <div className="h-screen w-full border-2 pt-5 border-red-500 bg-[#DBDCE0]">
+        {/* parent wrapper 02 */}
+        <div className="w-[80vw] mx-auto border-4 border-blue-500 h-full flex flex-col relative">
+          {/* navigation bar 03 */}
+          <nav className="absolute top-0 left-0 z-40 w-full border-2 p-2">
+            <Navbar />
+          </nav>
+          {/* introduction and landing page image */}
+          <div className="flex flex-1 border-3 border-orange-500">
+            {/* left */}
+            <div className="flex-3 text-[#363636] border-4 border-green-500">
+              <div className="flex flex-col justify-center h-full px-8 ">
+                <h1 className="text-5xl font-extrabold mb-2 xl:text-7xl">
+                  Simplicity
+                </h1>
+                <h2 className="text-5xl font-extrabold mb-4 xl:text-7xl">
+                  All you need to
+                  <br />
+                  Gain muscles
+                </h2>
+                <p className="text-lg  mb-2">
+                  our wisdom is to gain muscle is simplicity
+                  <br />
+                  and there no need to complex anything
+                  <br />
+                  just do what need it not rocket science be fit
+                </p>
+                <div>
+                  <button className="px-7 py-2 mt-5 bg-white rounded-full shadow font-semibold cursor-pointer">
+                    Dashboard
+                  </button>
+                </div>
+              </div>
+            </div>
+            {/* right */}
+            <div className="flex-2 border-4 border-purple-500 ">
+              <div
+                className="bg-cover bg-position-[top_30%] w-auto h-full"
+                style={{ backgroundImage: `url(${FitnessFemale})` }}
+              ></div>
+            </div>
+          </div>
         </div>
-
-        <h1 className="text-4xl font-bold text-center bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-6">
-          Vite + React + Tailwind
-        </h1>
-
-        <div className="space-y-4">
-          <button
-            onClick={() => setCount((count) => count + 1)}
-            className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-purple-700 hover:to-pink-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
-          >
-            Count is {count}
-          </button>
-
-          <p className="text-gray-600 text-center">
-            Edit{" "}
-            <code className="bg-gray-100 px-2 py-1 rounded text-sm text-purple-600">
-              src/App.jsx
-            </code>{" "}
-            and save to test HMR
-          </p>
-        </div>
-
-        <p className="text-gray-500 text-sm text-center mt-6">
-          Click on the Vite and React logos to learn more
-        </p>
       </div>
     </div>
   );
